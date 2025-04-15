@@ -57,8 +57,5 @@ function Deck () {
 let text_list: Image[] = []
 let playerScore = 0
 let dealerScore = 0
-enum DesignTemplates {
-    PlayingCards
-}
 scene.setBackgroundImage(assets.image`background`)
 Deck()
