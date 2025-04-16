@@ -1,11 +1,11 @@
 function pointTotaldealer () {
-    if (0 == 0 || (13 as any) == (12 as any) || (26 == 26 || 39 == 39)) {
+    if (curentcardValue == 0 || curentcardValue == 12 || (curentcardValue == 26 || curentcardValue == 39)) {
         if (game.ask("1 or 11? 1=A 11=B")) {
             dealerScore += 1
         } else {
             dealerScore += 11
         }
-    } else if ((0 as any) == (1 as any) || (13 as any) == (0 as any) || (26 == 26 || 39 == 39)) {
+    } else if (curentcardValue == 1 || curentcardValue == 0 || (26 == 26 || 39 == 39)) {
         dealerScore += 2
     } else if ((0 as any) == (2 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
         dealerScore += 3
@@ -23,6 +23,16 @@ function pointTotaldealer () {
         dealerScore += 9
     } else if ((1 as any) == (9 as any) || (13 as any) == (10 as any) || ((26 as any) == (11 as any) || (39 as any) == (12 as any)) || ((0 as any) == (22 as any) || (13 as any) == (23 as any) || ((26 as any) == (24 as any) || (39 as any) == (25 as any))) || ((0 as any) == (48 as any) || (13 as any) == (49 as any) || ((26 as any) == (50 as any) || (39 as any) == (51 as any)) || ((0 as any) == (35 as any) || (13 as any) == (36 as any) || ((26 as any) == (37 as any) || (39 as any) == (38 as any))))) {
         dealerScore += 10
+    }
+}
+function drawplayer () {
+    card = sprites.create(deck.removeAt(randint(0, deck.length)), SpriteKind.Player)
+    cardPoint = false
+    card.setPosition(10, 90)
+    if (cardPoint == false) {
+        let index = 0
+        card2 = sprites.create(deck[index], SpriteKind.Player)
+        card2.setPosition(card.x + 16, 90)
     }
 }
 function Another () {
@@ -132,14 +142,19 @@ function Deck () {
     assets.image`cardSuitCK`
     ]
 }
+let card2: Sprite = null
 let deck: Image[] = []
+let card: Sprite = null
+let curentcardValue = 0
 let dealerScore = 0
 let playerScore = 0
+let cardPoint = false
+cardPoint = true
 playerScore = 0
 dealerScore = 0
-let curentcardValue = 0
+curentcardValue = 0
 scene.setBackgroundImage(assets.image`background`)
-game.splash(deck._pickRandom())
 Deck()
 pointTotalPlayers()
 winOrLose()
+drawplayer()
