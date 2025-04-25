@@ -1,42 +1,98 @@
-function pointTotaldealer () {
-    if (curentcardValue == 0 || curentcardValue == 12 || (curentcardValue == 26 || curentcardValue == 39)) {
+function pointTotalPlayer (num: number, trueOrFalse: boolean) {
+    if (trueOrFalse && (num == 0 || num == 13 || (num == 26 || num == 39))) {
         if (game.ask("1 or 11? 1=A 11=B")) {
-            dealerScore += 1
+            playerScore += 1
         } else {
-            dealerScore += 11
+            playerScore += 11
         }
-    } else if (curentcardValue == 1 || curentcardValue == 0 || (26 == 26 || 39 == 39)) {
-        dealerScore += 2
-    } else if ((0 as any) == (2 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 3
-    } else if ((0 as any) == (3 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 4
-    } else if ((0 as any) == (4 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 5
-    } else if ((0 as any) == (5 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 6
-    } else if ((0 as any) == (6 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 7
-    } else if ((0 as any) == (7 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 8
-    } else if ((0 as any) == (8 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        dealerScore += 9
-    } else if ((1 as any) == (9 as any) || (13 as any) == (10 as any) || ((26 as any) == (11 as any) || (39 as any) == (12 as any)) || ((0 as any) == (22 as any) || (13 as any) == (23 as any) || ((26 as any) == (24 as any) || (39 as any) == (25 as any))) || ((0 as any) == (48 as any) || (13 as any) == (49 as any) || ((26 as any) == (50 as any) || (39 as any) == (51 as any)) || ((0 as any) == (35 as any) || (13 as any) == (36 as any) || ((26 as any) == (37 as any) || (39 as any) == (38 as any))))) {
-        dealerScore += 10
+    } else if (trueOrFalse && (num == 1 || num == 14 || (num == 27 || num == 40))) {
+        playerScore += 2
+    } else if (trueOrFalse && (num == 2 || num == 15 || (num == 28 || num == 41))) {
+        playerScore += 3
+    } else if (trueOrFalse && (num == 3 || num == 16 || (num == 29 || num == 42))) {
+        playerScore += 4
+    } else if (trueOrFalse && (num == 4 || num == 17 || (num == 30 || num == 43))) {
+        playerScore += 5
+    } else if (trueOrFalse && (num == 5 || num == 18 || (num == 31 || num == 44))) {
+        playerScore += 6
+    } else if (trueOrFalse && (num == 6 || num == 19 || (num == 32 || num == 45))) {
+        playerScore += 7
+    } else if (trueOrFalse && (num == 7 || num == 20 || (num == 33 || num == 46))) {
+        playerScore += 8
+    } else if (trueOrFalse && (num == 8 || num == 21 || (num == 34 || num == 47))) {
+        playerScore += 9
+    } else if (trueOrFalse && (num == 9 || num == 10 || (num == 11 || num == 12) || (num == 22 || num == 23 || (num == 24 || num == 25)) || (num == 48 || num == 49 || (num == 50 || num == 51) || (num == 35 || num == 36 || (num == 37 || num == 38))))) {
+        playerScore += 10
     }
 }
-function drawplayer () {
-    card = sprites.create(deck.removeAt(randint(0, deck.length)), SpriteKind.Player)
+function drawDealer () {
+    card = sprites.create(deck.removeAt(randint(0, 52)), SpriteKind.Player)
     cardPoint = false
+    curentcardValue = 0
     card.setPosition(10, 90)
-    if (cardPoint == false) {
-        let index = 0
-        card2 = sprites.create(deck[index], SpriteKind.Player)
-        card2.setPosition(card.x + 16, 90)
+}
+function dealerEnd () {
+    if (playerTurn == false && dealerScore >= 16) {
+    	
+    } else {
+    	
+    }
+    game.showLongText("Your score " + playerScore + "            " + "dealer score " + dealerScore, DialogLayout.Bottom)
+    winOrLose()
+}
+function pointTotalDealer (num: number, trueOrFalse: boolean) {
+    if (trueOrFalse && (num == 0 || num == 13 || (num == 26 || num == 39))) {
+        if (dealerScore <= 10 && (num == 0 || num == 13 || (num == 26 || num == 39))) {
+            dealerScore += 11
+        } else {
+            dealerScore += 1
+        }
+    } else if (trueOrFalse && (num == 1 || num == 14 || (num == 27 || num == 40))) {
+        dealerScore += 2
+    } else if (trueOrFalse && (num == 2 || num == 15 || (num == 28 || num == 41))) {
+        dealerScore += 3
+    } else if (trueOrFalse && (num == 3 || num == 16 || (num == 29 || num == 42))) {
+        dealerScore += 4
+    } else if (trueOrFalse && (num == 4 || num == 17 || (num == 30 || num == 43))) {
+        dealerScore += 5
+    } else if (trueOrFalse && (num == 5 || num == 18 || (num == 31 || num == 44))) {
+        dealerScore += 6
+    } else if (trueOrFalse && (num == 6 || num == 19 || (num == 32 || num == 45))) {
+        dealerScore += 7
+    } else if (trueOrFalse && (num == 7 || num == 20 || (num == 33 || num == 46))) {
+        dealerScore += 8
+    } else if (trueOrFalse && (num == 8 || num == 21 || (num == 34 || num == 47))) {
+        dealerScore += 9
+    } else if (trueOrFalse && (num == 9 || num == 10 || (num == 11 || num == 12) || (num == 22 || num == 23 || (num == 24 || num == 25)) || (num == 48 || num == 49 || (num == 50 || num == 51) || (num == 35 || num == 36 || (num == 37 || num == 38))))) {
+        dealerScore += 10
     }
 }
 function Another () {
 	
+}
+function drawcards () {
+    randomIndex = deck.indexOf(deck._pickRandom())
+    card = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
+    cardPoint = false
+    card.setPosition(40, 90)
+    pointTotalPlayer(randomIndex, true)
+    dealerindex = deck.indexOf(deck._pickRandom())
+    card2 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
+    cardPoint = true
+    card2.setPosition(120, 30)
+    pointTotalDealer(dealerindex, true)
+    randomIndex = deck.indexOf(deck._pickRandom())
+    card3 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
+    cardPoint = true
+    card3.setPosition(56, 90)
+    pointTotalPlayer(randomIndex, true)
+    dealerindex = deck.indexOf(deck._pickRandom())
+    card4 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
+    cardPoint = true
+    pointTotalDealer(dealerindex, true)
+    card4.setPosition(104, 30)
+    game.showLongText("Your score " + playerScore, DialogLayout.Bottom)
+    game.showLongText("dealer score " + dealerScore, DialogLayout.Bottom)
 }
 function winOrLose () {
     if (playerScore > dealerScore) {
@@ -57,33 +113,6 @@ function winOrLose () {
         } else {
         	
         }
-    }
-}
-function pointTotalPlayers () {
-    if (0 == 0 || (13 as any) == (12 as any) || (26 == 26 || 39 == 39)) {
-        if (game.ask("1 or 11? 1=A 11=B")) {
-            playerScore += 1
-        } else {
-            playerScore += 11
-        }
-    } else if ((0 as any) == (1 as any) || (13 as any) == (0 as any) || (26 == 26 || 39 == 39)) {
-        playerScore += 2
-    } else if ((0 as any) == (2 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 3
-    } else if ((0 as any) == (3 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 4
-    } else if ((0 as any) == (4 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 5
-    } else if ((0 as any) == (5 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 6
-    } else if ((0 as any) == (6 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 7
-    } else if ((0 as any) == (7 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 8
-    } else if ((0 as any) == (8 as any) || 13 == 13 || (26 == 26 || 39 == 39)) {
-        playerScore += 9
-    } else if ((1 as any) == (9 as any) || (13 as any) == (10 as any) || ((26 as any) == (11 as any) || (39 as any) == (12 as any)) || ((0 as any) == (22 as any) || (13 as any) == (23 as any) || ((26 as any) == (24 as any) || (39 as any) == (25 as any))) || ((0 as any) == (48 as any) || (13 as any) == (49 as any) || ((26 as any) == (50 as any) || (39 as any) == (51 as any)) || ((0 as any) == (35 as any) || (13 as any) == (36 as any) || ((26 as any) == (37 as any) || (39 as any) == (38 as any))))) {
-        playerScore += 10
     }
 }
 function Deck () {
@@ -142,19 +171,23 @@ function Deck () {
     assets.image`cardSuitCK`
     ]
 }
+let card4: Sprite = null
+let card3: Sprite = null
 let card2: Sprite = null
+let dealerindex = 0
+let randomIndex = 0
 let deck: Image[] = []
 let card: Sprite = null
 let curentcardValue = 0
 let dealerScore = 0
 let playerScore = 0
 let cardPoint = false
+let playerTurn = false
+playerTurn = true
 cardPoint = true
 playerScore = 0
 dealerScore = 0
 curentcardValue = 0
 scene.setBackgroundImage(assets.image`background`)
 Deck()
-pointTotalPlayers()
-winOrLose()
-drawplayer()
+drawcards()

@@ -113,28 +113,6 @@ d 5 d d d d d d d d d d d 5 d
 d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
 5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
 `;
-            case "image3":
-            case "cardSuitHA":return img`
-5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
-d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
-5 d d d d d d d d d d d d d 5 
-d 5 d d d a a d a a d d d 5 d 
-5 d d d a a a a a a a d d d 5 
-d 5 d d a a a a a a a d d 5 d 
-5 d d d a a a a a a a d d d 5 
-d 5 d d d a a a a a d d d 5 d 
-5 d d d d d a a a d d d d d 5 
-d 5 d d d d d 2 d d d d d 5 d 
-5 d d d d d 2 2 2 d d d d d 5 
-d 5 d d d 2 2 d 2 2 d d d 5 d 
-5 d d d d 2 d d d 2 d d d d 5 
-d 5 d d d 2 2 2 2 2 d d d 5 d 
-5 d d d d 2 d d d 2 d d d d 5 
-d 5 d d d 2 d d d 2 d d d 5 d 
-5 d d d d d d d d d d d d d 5 
-d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
-5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
-`;
             case "image4":
             case "cardSuitH2":return img`
 5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
@@ -1410,6 +1388,28 @@ f.f..f..............
 f.f..f..............
 f.f..f..............
 f..ff...............
+`;
+            case "image3":
+            case "cardSuitHA":return img`
+5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
+d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
+5 d d d d d d d d d d d d d 5 
+d 5 d d d a a d a a d d d 5 d 
+5 d d d a a a a a a a d d d 5 
+d 5 d d a a a a a a a d d 5 d 
+5 d d d a a a a a a a d d d 5 
+d 5 d d d a a a a a d d d 5 d 
+5 d d d d d a a a d d d d d 5 
+d 5 d d d d d 2 d d d d d 5 d 
+5 d d d d d 2 2 2 d d d d d 5 
+d 5 d d d 2 2 d 2 2 d d d 5 d 
+5 d d d d 2 d d d 2 d d d d 5 
+d 5 d d d 2 2 2 2 2 d d d 5 d 
+5 d d d d 2 d d d 2 d d d d 5 
+d 5 d d d 2 d d d 2 d d d 5 d 
+5 d d d d d d d d d d d d d 5 
+d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
+5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
 `;
         }
         return null;

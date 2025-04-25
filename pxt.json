@@ -1,9 +1,8 @@
 {
-    "name": "blackjack",
+    "name": "blackjack1",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "multiplayer": "*"
+        "device": "*"
     },
     "files": [
         "main.blocks",
@@ -19,7 +18,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.48",
+        "target": "2.0.53",
         "targetId": "arcade"
     },
     "supportedTargets": [
