@@ -30,13 +30,12 @@ function fixerTrue () {
     if (pointDeck[randomIndex] != deck[trueindex - paint]) {
         fixer += 1
         paint += 1
-    } else {
+    }
+    if (pointDeck[randomIndex] == deck[trueindex - paint]) {
         randomIndex += fixer
         paint = 0
     }
-    while (false) {
-    	
-    }
+    return 0
 }
 function dealerEnd () {
     if (playerTurn == false && dealerScore >= 16) {
