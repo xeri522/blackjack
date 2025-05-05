@@ -1411,6 +1411,28 @@ d 5 d d d 2 d d d 2 d d d 5 d
 d 5 d 5 d 5 d 5 d 5 d 5 d 5 d 
 5 d 5 d 5 d 5 d 5 d 5 d 5 d 5 
 `;
+            case "image58":
+            case "card back":return img`
+b 5 b 5 b 5 b 5 b 5 b 5 b 5 b 
+5 b 5 b 5 b 5 b 5 b 5 b 5 b 5 
+b 5 5 5 5 5 5 5 5 5 5 5 5 5 b 
+5 b 5 5 5 8 8 5 8 8 5 5 5 b 5 
+b 5 5 5 8 8 8 8 8 8 8 5 5 5 b 
+5 b 5 8 f 8 8 6 8 8 f 8 5 b 5 
+b 5 8 8 f f a 6 a f f 8 8 5 b 
+5 b 8 8 6 f f b f f 6 8 8 b 5 
+b 5 5 6 6 a f c f a 6 6 5 5 b 
+5 b 5 6 6 b c f c b 6 6 5 b 5 
+b 5 8 8 6 a f c f a 6 8 8 5 b 
+5 b 8 8 8 f f b f f 8 8 8 b 5 
+b 5 5 8 f f a 6 a f f 8 5 5 b 
+5 b 5 8 f 8 8 6 8 8 f 8 5 b 5 
+b 5 5 5 8 8 5 8 5 8 8 5 5 5 b 
+5 b 5 5 5 5 5 5 5 5 5 5 5 b 5 
+b 5 5 5 5 5 5 5 5 5 5 5 5 5 b 
+5 b 5 b 5 b 5 b 5 b 5 b 5 b 5 
+b 5 b 5 b 5 b 5 b 5 b 5 b 5 b 
+`;
         }
         return null;
     })

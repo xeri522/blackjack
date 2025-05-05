@@ -25,11 +25,18 @@ function pointTotalPlayer (num: number, trueOrFalse: boolean) {
         playerScore += 10
     }
 }
-function drawDealer () {
-    card = sprites.create(deck.removeAt(randint(0, 52)), SpriteKind.Player)
-    cardPoint = false
-    curentcardValue = 0
-    card.setPosition(10, 90)
+function fixerTrue () {
+    trueindex = randomIndex
+    if (pointDeck[randomIndex] != deck[trueindex - paint]) {
+        fixer += 1
+        paint += 1
+    } else {
+        randomIndex += fixer
+        paint = 0
+    }
+    while (false) {
+    	
+    }
 }
 function dealerEnd () {
     if (playerTurn == false && dealerScore >= 16) {
@@ -74,23 +81,17 @@ function drawcards () {
     randomIndex = deck.indexOf(deck._pickRandom())
     card = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
     cardPoint = false
+    fixerTrue()
     card.setPosition(40, 90)
-    pointTotalPlayer(randomIndex, true)
-    dealerindex = deck.indexOf(deck._pickRandom())
-    card2 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
-    cardPoint = true
-    card2.setPosition(120, 30)
-    pointTotalDealer(dealerindex, true)
+    pointTotalPlayer(trueindex, true)
     randomIndex = deck.indexOf(deck._pickRandom())
-    card3 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
-    cardPoint = true
-    card3.setPosition(56, 90)
-    pointTotalPlayer(randomIndex, true)
-    dealerindex = deck.indexOf(deck._pickRandom())
-    card4 = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
-    cardPoint = true
-    pointTotalDealer(dealerindex, true)
-    card4.setPosition(104, 30)
+    card = sprites.create(deck.removeAt(randomIndex), SpriteKind.Player)
+    fixerTrue()
+    cardPoint = false
+    card.setPosition(120, 30)
+    pointTotalDealer(trueindex, true)
+    console.log(playerScore)
+    console.log(dealerScore)
     game.showLongText("Your score " + playerScore, DialogLayout.Bottom)
     game.showLongText("dealer score " + dealerScore, DialogLayout.Bottom)
 }
@@ -170,15 +171,68 @@ function Deck () {
     assets.image`cardSuitCQ`,
     assets.image`cardSuitCK`
     ]
+    pointDeck = [
+    assets.image`cardSuitHA`,
+    assets.image`cardSuitH2`,
+    assets.image`cardSuitH3`,
+    assets.image`cardSuitH4`,
+    assets.image`cardSuitH5`,
+    assets.image`cardSuitH6`,
+    assets.image`cardSuitH7`,
+    assets.image`cardSuitH8`,
+    assets.image`cardSuitH9`,
+    assets.image`cardSuitH10`,
+    assets.image`cardSuitHU`,
+    assets.image`cardSuitHQ`,
+    assets.image`cardSuitHK`,
+    assets.image`cardSuitDA`,
+    assets.image`cardSuitD2`,
+    assets.image`cardSuitD3`,
+    assets.image`cardSuitD4`,
+    assets.image`cardSuitD5`,
+    assets.image`cardSuitD6`,
+    assets.image`cardSuitD7`,
+    assets.image`cardSuitD8`,
+    assets.image`cardSuitD9`,
+    assets.image`cardSuitD10`,
+    assets.image`cardSuitDU`,
+    assets.image`cardSuitDQ`,
+    assets.image`cardSuitDK`,
+    assets.image`cardSuitSA`,
+    assets.image`cardSuitS2`,
+    assets.image`cardSuitS3`,
+    assets.image`cardSuitS4`,
+    assets.image`cardSuitS5`,
+    assets.image`cardSuitS6`,
+    assets.image`cardSuitS7`,
+    assets.image`cardSuitS8`,
+    assets.image`cardSuitS9`,
+    assets.image`cardSuitS10`,
+    assets.image`cardSuitSU`,
+    assets.image`cardSuitSQ`,
+    assets.image`cardSuitSK`,
+    assets.image`cardSuitCA`,
+    assets.image`cardSuitC2`,
+    assets.image`cardSuitC3`,
+    assets.image`cardSuitC4`,
+    assets.image`cardSuitC5`,
+    assets.image`cardSuitC6`,
+    assets.image`cardSuitC7`,
+    assets.image`cardSuitC8`,
+    assets.image`cardSuitC9`,
+    assets.image`cardSuitC10`,
+    assets.image`cardSuitCU`,
+    assets.image`cardSuitCQ`,
+    assets.image`cardSuitCK`
+    ]
 }
-let card4: Sprite = null
-let card3: Sprite = null
-let card2: Sprite = null
-let dealerindex = 0
-let randomIndex = 0
-let deck: Image[] = []
 let card: Sprite = null
-let curentcardValue = 0
+let deck: Image[] = []
+let pointDeck: Image[] = []
+let randomIndex = 0
+let trueindex = 0
+let paint = 0
+let fixer = 0
 let dealerScore = 0
 let playerScore = 0
 let cardPoint = false
@@ -187,7 +241,9 @@ playerTurn = true
 cardPoint = true
 playerScore = 0
 dealerScore = 0
-curentcardValue = 0
+let curentcardValue = 0
+fixer = 0
+paint = 0
 scene.setBackgroundImage(assets.image`background`)
 Deck()
 drawcards()

@@ -294,6 +294,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "cardSuitHA"
     },
+    "image58": {
+        "data": "hwQPABMAAABbW1tbW1tbW1sLAAC1tbW1tbW1tbUFAABbVVWIVYhVVVULAAC1VYWIZoiIVbUFAABbVfhvZob/WFULAAC1hYj/uvqPWLUFAABbhYj6z/+KVVULAAC1VWi2/LxmWLUFAABbhYj6z/+KVVULAAC1hYj/uvqPWLUFAABbVfhvZob/WFULAAC1VYWIZoiIVbUFAABbVVWIVYhVVVULAAC1tbW1tbW1tbUFAABbW1tbW1tbW1sLAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "card back"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
